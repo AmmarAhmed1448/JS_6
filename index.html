@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+    <script>
+        // Q1
+        let d = new Date();
+        console.log(d);
+
+        // Q2
+        function greet(fName, lName){
+            alert("Welcome " + fName + " " + lName);
+        }
+
+        greet("Ammar", "Ahmed");
+
+        // Q3
+        function doSomething(num1, num2, op){
+            switch (op) {
+                case "+":
+                    return num1 + num2;
+                    break;
+                case "-":
+                    return num1 - num2;
+                    break;
+                case "*":
+                    return num1 * num2;
+                    break;
+                case "/":
+                    return num1 / num2;
+                    break;
+            }
+        }
+        console.log(doSomething(10, 21, "*"));
+
+
+        // Q4
+        function square(num){
+            return num * num;
+        }
+
+        console.log(square(91));
+
+        // Q5
+        function factorial(num){
+            let fact = 1, count = num;
+
+            while(count > 0){
+                fact = fact * count;
+                --count;
+            }
+            return fact;
+        }
+
+        console.log(factorial(5));
+
+        // Q10
+        function palindrome(str){
+            // debugger
+            const temp = str.split("");
+            // console.log(temp)
+            const reverse = temp.toReversed();
+            // console.log(reverse)
+            // console.log(typeof reverse + typeof temp)
+            return(reverse.join() == temp.join() ? true : false)
+        }
+
+
+        console.log(palindrome("madam"))
+
+
+        // Q11
+        function title(str){
+            const arr = str.split(" ");
+            let titleArr = arr.map((element) => {
+                return element[0].toUpperCase() + element.slice(1);
+            })
+
+            return titleArr.join(" ");
+        }
+
+        console.log(title("the quick brown fox"));
+
+        // Q12
+        function longestWord(str){
+            let arr = str.split(" ");
+            let lenArr = arr.map(element => element.length);
+            let i = lenArr.findIndex(element => element === Math.max(...lenArr))
+            return arr[i];
+        }
+
+
+        console.log(longestWord("Web Development Tutorial"));
+
+
+        // Q13
+        function letterConter(str, char){
+            let counter = 0;
+            for(let i =0; i < str.length; i++){
+                if(str[i] === char)
+                    ++counter;
+            }
+            return counter;
+        }
+
+        console.log(letterConter("JSResourceS.cooom", 'o'));
+
+
+
+
+        // Q14
+        function calcCircumference(radius){
+            return 2 * Math.PI * radius;
+        }
+
+        function calcArea(radius){
+            return Math.PI * Math.pow(radius, 2);
+        }
+
+
+        console.log(calcCircumference(21));
+        console.log(calcArea(21));
+    </script>
+</body>
+</html>
